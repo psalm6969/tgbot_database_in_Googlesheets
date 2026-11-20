@@ -1,0 +1,14 @@
+google-service-account.json
+email_bot_state.json
+email_bot_state.json.tmp
+.env.email-bot
+emailbot_vps_deploy_ed25519
+emailbot_vps_deploy_ed25519.pub
+emailbot_vps_deploy_host_ed25519
+emailbot_vps_deploy_host_ed25519.pub
+credentials.json
+*.pem
+*.key
+.env
+.env.*
+!.env.email-bot.example

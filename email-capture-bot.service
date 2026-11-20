@@ -1,0 +1,24 @@
+[Unit]
+Description=Telegram email capture bot to Google Sheets
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=emailbot
+Group=emailbot
+WorkingDirectory=/opt/email-capture-bot
+EnvironmentFile=/etc/email-capture-bot.env
+ExecStart=/opt/email-capture-bot/.venv/bin/python /opt/email-capture-bot/email_capture_bot.py
+Restart=always
+RestartSec=5
+StateDirectory=email-capture-bot
+StateDirectoryMode=0750
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/email-capture-bot
+
+[Install]
+WantedBy=multi-user.target
